@@ -12,11 +12,13 @@ fs.readFile('./public/index.html','utf8', (err, data) =>{
       console.log(data);
 
       const server = http.createServer((req, res) = >{
-	res.writeHead(200,{'Content-Type':'text/html'});
-	res.end(data);
-     });
-
+	res.statusCode = 200;
+	res.setHeader("Content-Type","test/html"
+	readIndex((data)=> {
+		res.end(data);
+     })
+ })
 server.listen(port,() => {
    console.log('Server listening on port ${port}');
 });
-});
+
