@@ -11,7 +11,7 @@ fs.readFile('./public/index.html','utf8', (err, data) =>{
       }
       console.log(data);
 
-      const server = http.createServer((req, res) = >{
+      const server = http.createServer((req, res) => {
 	res.statusCode = 200;
 	res.setHeader("Content-Type","test/html"
 	readIndex((data)=> {
