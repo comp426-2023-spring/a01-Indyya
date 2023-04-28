@@ -19,7 +19,7 @@ const port = args.port || 3000;
 // // Do not be nice about exiting.
 fs.readFile('./public/index.html','utf8' (err, data) => {
 	if(err) {
-   	   console.error(err);
+   	   console.error();
    	   return;
 	}
 	console.log(data);
@@ -39,5 +39,6 @@ fs.readFile('./public/index.html','utf8' (err, data) => {
 // // Put the exact message `Server listening on port ${port}` on the console log. 
 server.listen(port, () => {
 	console.log('Server listening on port ${port}');
+});
 });
 // // That's it! You're all done!
