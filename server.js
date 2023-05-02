@@ -16,9 +16,8 @@ const port = args.port || 3000;
 fs.readFile('./public/index.html', (err, data) => {
 	if (err) {
 		console.error(err);
-		process.exit(1);
+		return;
 	}
-	console.log(data);
 });
 // If there is an error, put it on the console error and return. 
 // Do not be nice about exiting.
@@ -35,13 +34,14 @@ fs.readFile('./public/index.html', (err, data) => {
 
 const server = http.createServer((req, res) => {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('./public/index.html');
+    res.end(data);
 });
 
 // Start the `server` const listening on the port defined by argument in your `port` const. 
 // Put the exact message `Server listening on port ${port}` on the console log. 
 
-server.listen(port, () => {console.log('Server listening on port ' + port);
+server.listen(port, () => {
+	console.log('Server listening on port ' + port);
 });
 
 // That's it! You're all done!
