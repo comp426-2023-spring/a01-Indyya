@@ -15,9 +15,10 @@ const port = args.port || 3000;
 // The stuff that should be inside this function is all below.
 fs.readFile('./public/index.html', (err, data) => {
 	if (err) {
-		console.error(err);
-		return;
+	   console.error(err);
+	   return;
 	}
+	console.log(data);
 });
 // If there is an error, put it on the console error and return. 
 // Do not be nice about exiting.
@@ -34,7 +35,7 @@ fs.readFile('./public/index.html', (err, data) => {
 
 const server = http.createServer((req, res) => {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end(data);
+    res.end('./public/index.html');
 });
 
 // Start the `server` const listening on the port defined by argument in your `port` const. 
