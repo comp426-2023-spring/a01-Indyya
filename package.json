@@ -2,17 +2,14 @@
   "name": "myserver",
   "version": "1.0.0",
   "description": "This package contains a very simple web server that takes one argument for port and then serves any files inside the public directory.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "node server.js --port=5555"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/comp426-2023-spring/a01-Indyya.git"
+    "url": "git+https://github.com/comp426-2023-spring/a01-indyya.git"
   },
-  "keywords": [
-    "web"
-  ],
   "author": "@indyya",
   "license": "GPL-3.0-or-later",
   "bugs": {
