@@ -14,8 +14,8 @@ const port = args.port || 3000;
 // The function must read a file located at `./public/index.html` and do some stuff with it.
 // The stuff that should be inside this function is all below.
 const server = http.createServer((req, res) => {
-	res.statusCode = 200;
-	res.setHeader('Content-Type', 'text/html');
+	res.writeHead(200, {'Content-Type':'text/html'});
+	res.end('./public/index.html');
 	fs.readFile('./public/index.html', (err, data) => {
 		if (err) {
 			console.error(err);
